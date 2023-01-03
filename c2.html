@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTATORE DI LETTERE NEL FORM</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Write</h1>
+        <input class='input' type="text">
+        <p><span id="counter">00</span> letters</p>
+        <button class="reset">RESET</button>
+    <script>
+        let input = document.querySelector('.input');
+        let counter = document.querySelector('#counter');
+        let reset = document.querySelector('.reset');
+
+        input.addEventListener('input', ()=>{
+            let numOfChars = input.value.length;
+            counter.textContent = numOfChars;
+        });
+       
+        reset.addEventListener('click',()=>{
+            counter.textContent= '00';
+            input.value = '';
+        });
+
+    </script>
+</body>
+</html>
